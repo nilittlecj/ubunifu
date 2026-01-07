@@ -1,0 +1,228 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+/* ===== BODY ===== */
+body {
+    background: linear-gradient(135deg, #d7f5d6, #a5d9ba);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    overflow-x: hidden;
+    padding-top: 120px;
+}
+
+/* ===== HEADER ===== */
+.myheader {
+    width: 100%;
+    background: #046307;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.myheader img {
+    width: 60px;
+}
+
+.myheader h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: .5px;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.center-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    width: 90%;
+    max-width: 760px;
+    background: #ffffff;
+    padding: 45px 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.18);
+    text-align: center;
+    animation: fadeInUp .7s ease forwards;
+}
+
+.container h2 {
+    color: #046307;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* ===== BUTTONS ===== */
+.top-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.action-btn {
+    background: #046307;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.action-btn:hover {
+    background: #058c15;
+    transform: translateY(-3px);
+}
+
+.logout {
+    background: #d9534f;
+}
+
+.logout:hover {
+    background: #c9302c;
+}
+
+/* ===== VIEW RECEIPTS BUTTON ===== */
+.view-btn {
+    background: #ffffff;
+    color: #046307;
+    border: 2px solid #046307;
+    padding: 12px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: .3s;
+}
+
+.view-btn:hover {
+    background: #046307;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* ===== POPUP ===== */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.55);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 10000;
+}
+
+.popup-content {
+    background: #fbfffb;
+    padding: 30px;
+    border-radius: 18px;
+    width: 95%;
+    max-width: 900px;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 12px 30px rgba(0,0,0,.25);
+    animation: fadeInUp .5s ease forwards;
+}
+
+.close-btn {
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+    color: #046307;
+    font-weight: bold;
+}
+
+/* ===== RECEIPT TABLE ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th {
+    background: #dff5de;
+    padding: 13px;
+    color: #034f09;
+    text-align: left;
+    font-weight: 700;
+    border-bottom: 2px solid #cdeccc;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #e3f2e3;
+    font-size: 15px;
+}
+
+/* PRINT LINK */
+td a {
+    color: #046307;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+td a:hover {
+    color: #058c15;
+}
+
+/* NO RECEIPT */
+.no-receipt {
+    text-align: center;
+    color: #b00020;
+    font-weight: 600;
+    padding: 20px;
+    font-size: 17px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 14px;
+    color: #2e2e2e;
+    background: transparent;
+    margin-top: auto;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .container { padding: 30px 20px; }
+    table { font-size: 13px; }
+    th, td { padding: 10px; }
+}
+
+@media (max-width: 480px) {
+    .myheader h1 { font-size: 20px; }
+    .myheader img { width: 45px; }
+    .container { padding: 25px 15px; }
+}

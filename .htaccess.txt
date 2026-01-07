@@ -1,0 +1,13 @@
+# Protect sensitive files
+<Files "datas.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Disable directory browsing
+Options -Indexes
+
+# Redirect HTTP to HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
